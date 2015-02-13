@@ -53,4 +53,6 @@ var CouponStore = assign({}, EventEmitter.prototype, {
 
 })
 
+CouponStore.getCouponsFromServer();
+
 module.exports = CouponStore;
