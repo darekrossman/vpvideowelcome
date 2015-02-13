@@ -5,29 +5,21 @@ var Card = require('./Card.react');
 var CouponApp = React.createClass({ 
 
   getInitialState: function(){
-    // return {
-    //   coupons: []
-    // }
-
     return _getState();
   },
 
   componentDidMount: function(){
-    // _fakeAsyncRequest().then(function(coupons){
-    //   this.setState({
-    //     coupons: coupons
-    //   })
-    // }.bind(this))
-
+    // Trigger a callback to re-set the state
+    // when the store emits a `change` event.
     CouponStore.on('change', function(){
-      this.setState(_getState);
-    })
+      console.info('CouponStore got new data, updating state');
+      this.setState(_getState());
+    }.bind(this))
   }, 
 
-  render: function() { 
+  render: function() {  
+    console.info('Rendering CouponApp with state ->', this.state);
 
-    // var coupons = this.state.coupons;
-    
     var coupons = Object.keys(this.state.coupons).map(key => {
       return this.state.coupons[key];
     });
@@ -56,36 +48,6 @@ var CouponApp = React.createClass({
   }
 
 });
-
-function _fakeAsyncRequest () {
-  return Promise.resolve([
-    {
-      id: 1,
-      merchantName: 'TacoBus',
-      title: 'Free Large Soda with Purchase of Taco',
-      category: 'Restaurants',
-      isFavorite: false,
-      featureImage: 'public/img/tacos.jpg',
-      distance: '.2 mi'
-    },{
-      id: 2,
-      merchantName: 'JiffyLube',
-      title: '20% Off Oil Change and Alignment',
-      category: 'Automotive',
-      isFavorite: false,
-      featureImage: 'public/img/oilchange.jpg',
-      distance: '1.1 mi'
-    },{
-      id: 3,
-      merchantName: 'AMC',
-      title: 'Half-Off Movie Night on Wednesday',
-      category: 'Entertainment',
-      isFavorite: false,
-      featureImage: 'public/img/movienight.jpg',
-      distance: '2 mi'
-    }
-  ]);
-}
 
 function _getState () {
   return {
