@@ -1,13 +1,13 @@
 var EventEmitter = require('events').EventEmitter;
 var assign = require('object-assign');
-
-var _coupons = {};
+ 
+var _coupons = {};    
 
 var CouponStore = assign({}, EventEmitter.prototype, {
 
   getAll: function(){
     return _coupons;
-  },
+  }, 
 
   getCouponsFromServer: function() {
     var coupons = [

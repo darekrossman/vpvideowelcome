@@ -1,7 +1,7 @@
 var React = require('react');
 var CouponStore = require('./CouponStore');
 var Card = require('./Card.react'); 
-
+  
 var CouponApp = React.createClass({ 
 
   getInitialState: function(){
