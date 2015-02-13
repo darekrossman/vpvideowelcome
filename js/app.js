@@ -1,10 +1,19 @@
-var React = require('react');
-var App = require('./App.react');
+var React     = require('react');
+var Router    = require('react-router');
+var App       = require('./App.react');
+var CouponApp = require('./CouponApp.react');
+var Route     = Router.Route;
 
-if (window) {
-  window.React = React; // export for http://fb.me/react-devtools  
-}
+var routes = (
+  <Route name="app" path="/" handler={App}>
+    <Route name="coupon-app" handler={CouponApp}/>
+  </Route>
+);
 
-React.render(<App />, document.getElementById('app'))
+Router.run(routes, function (Handler) {
+  React.render(<Handler/>, document.getElementById('app'));
+});
+
+window.React = React; // <-- needed for dev tools
 
 
