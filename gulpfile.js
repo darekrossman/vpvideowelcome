@@ -10,9 +10,8 @@ var watchify = require('watchify');
 var browserify = require('browserify');
 
 browserSync({
-  proxy: 'localhost:3333/playground',
-  files: ['**/js/bundle.js', '**/*.css', '**/*.html'],
-  open: false
+  server: {baseDir: './'},
+  files: ['**/js/bundle.js', '**/*.css', '**/*.html']
 })
 
 var bundler = watchify(browserify(watchify.args));

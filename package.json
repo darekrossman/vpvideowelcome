@@ -28,9 +28,8 @@
     "watchify": "^2.1.1"
   },
   "scripts": {
-    "start": "watchify -o dist/bundle.js -v -d .",
-    "build": "NODE_ENV=production browserify . | uglifyjs -cm > dist/bundle.min.js",
-    "server": "node --harmony ./server/server.js"
+    "start": "watchify -o js/bundle.js -v -d .",
+    "build": "NODE_ENV=production browserify . | uglifyjs -cm > js/bundle.min.js"
   },
   "author": "Darek Rossman",
   "browserify": {
