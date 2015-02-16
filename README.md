@@ -8,6 +8,7 @@ A simple React application scaffold for experimenting with React components.
 - Reactify transform for React/JSX
 - ES6ify transform for ES6 features
 - Basic router scaffold with [react-router](https://github.com/rackt/react-router)
+- Jest test framework
 
 Install it
 ----------
