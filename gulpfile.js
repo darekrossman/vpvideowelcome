@@ -12,7 +12,7 @@ var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('browsersync', ['bundle'], function(){
   return browserSync({
-    static: {baseDir: './'},
+    server: {baseDir: './'},
     files: ['**/js/bundle.js', '**/*.css', '**/*.html']
   })  
 })
