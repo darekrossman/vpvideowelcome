@@ -1,14 +1,13 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var gutil = require('gulp-util');
-var es6ify = require('es6ify');
 var reactify = require('reactify');
 var sourcemaps = require('gulp-sourcemaps');
 var source = require('vinyl-source-stream');
 var watchify = require('watchify');
 var browserify = require('browserify');
 var sass = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
+var babelify = require('babelify');
 
 gulp.task('browsersync', ['bundle'], function(){
   return browserSync({
@@ -19,9 +18,9 @@ gulp.task('browsersync', ['bundle'], function(){
 
 gulp.task('bundle', function(){
   var bundler = browserify(watchify.args);
-  bundler.add('./js/app.js');
-  bundler.transform('reactify');
-  bundler.transform('es6ify');
+  bundler.add('./node_modules/regenerator/runtime.js');
+  bundler.add('./js/app.js', {entry: true});
+  bundler.transform('babelify', {experimental: true, sourceMap: true})
   
   if (global.isWatching) {
     bundler = watchify(bundler);
@@ -48,7 +47,6 @@ gulp.task('sass', function () {
     .pipe(sass({
       errLogToConsole: true
     }))
-    .pipe(autoprefixer())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('css/'))
 });
