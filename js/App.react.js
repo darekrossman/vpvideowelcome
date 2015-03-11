@@ -174,7 +174,7 @@ var App = React.createClass({
             </div> {/* .local-block */}
 
             <div className="promo-banner">
-              <img ref="promoBanner" src="ttps://s3.amazonaws.com/vpdms-media-us/user-media/C4_Bridal_ThemePageHeader.jpg"/>
+              <img ref="promoBanner" src="https://s3.amazonaws.com/vpdms-media-us/user-media/C4_Bridal_ThemePageHeader.jpg"/>
             </div>
 
           </div> {/* .main */}
