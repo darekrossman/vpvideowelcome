@@ -61,12 +61,19 @@ var App = React.createClass({
   render: function() {
  
     var playlist = [
-      // '/video/statefair.mp4',
       '/video/MVI_0481.mp4',
-      // 'http://s3.amazonaws.com/vpdms-media-us/user-media/stock-footage-two-brothers-hug-and-smile-while-on-a-suburban-sidewalk.mp4',
-      // 'http://s3.amazonaws.com/vpdms-media-us/user-media/stock-footage-young-boy-in-front-of-lemonade-stand.mp4',
-      // 'http://s3.amazonaws.com/vpdms-media-us/user-media/stock-footage-mother-giving-daughter-piggyback-as-they-spin-around-in-the-garden-in-slow-motion.mp4',
-      // 'http://s3.amazonaws.com/vpdms-media-us/user-media/stock-footage-customers-browsing-and-shopping-in-local-gift-store-purchasing-products-and-goods-from-shop.mp4',
+      '/video/statefair.mp4',
+      'http://s3.amazonaws.com/vpdms-media-us/user-media/stock-footage-two-brothers-hug-and-smile-while-on-a-suburban-sidewalk.mp4',
+      'http://s3.amazonaws.com/vpdms-media-us/user-media/stock-footage-young-boy-in-front-of-lemonade-stand.mp4',
+      'http://s3.amazonaws.com/vpdms-media-us/user-media/stock-footage-mother-giving-daughter-piggyback-as-they-spin-around-in-the-garden-in-slow-motion.mp4',
+      'http://s3.amazonaws.com/vpdms-media-us/user-media/stock-footage-customers-browsing-and-shopping-in-local-gift-store-purchasing-products-and-goods-from-shop.mp4',
+      '/video/4664993.mp4',
+      '/video/5528147.mp4',
+      '/video/2708816.mp4',
+      '/video/4770209.mp4',
+      '/video/3519014.mp4',
+      '/video/5798342.mp4',
+      
     ]
 
     return (
