@@ -9,50 +9,13 @@ var App = React.createClass({
 
   getInitialState: function() {
     return {
-      playingItem: 1  
+      playingItem: 1,
+      loading: true  
     };
   },
 
   componentDidMount: function() {
-    var branding = this.refs.branding.getDOMNode();
-    var downarrow = document.querySelector('.downarrow');
-    var pausebutton = document.querySelector('.pause');
-    var bigSearch = this.refs.bigSearch.getDOMNode();
-
-    branding.classList.remove('unresolved');
-    downarrow.classList.remove('unresolved');
-    bigSearch.classList.remove('unresolved');
-
-    branding.classList.add('resolving');    
-    bigSearch.classList.add('resolving');    
-
-    pausebutton.addEventListener('click', () => {
-      var dv = this.refs.dv;
-      if (dv.state.playing)
-        dv.pause();
-      else
-        dv.play();
-    })
-
-    downarrow.addEventListener('click', () => {
-      var page = document.querySelector('.page');
-      scrollTo(window.innerHeight, () => {
-
-      }, 700);
-    })
-
-    setTimeout(()=>{
-      branding.classList.remove('resolving');
-      bigSearch.classList.remove('resolving');    
-    }, 1600)
-
-    window.addEventListener('keyup', (e) => {
-      var dv = this.refs.dv;
-      var k = e.keyCode;
-      if (k === 37) return dv.play(dv.state.currentItem - 1);
-      if (k === 38) return dv[dv.state.playing ? 'pause' : 'play']();
-      if (k === 39) return dv.play(dv.state.currentItem + 1);
-    })
+    
 
   },
 
@@ -77,7 +40,13 @@ var App = React.createClass({
     ]
 
     return (
-      <div className="layout vertical fit page" onScroll={this.vscrolling}>
+      <div ref="page" className="layout vertical fit page LOADING" onScroll={this.vscrolling}>
+
+        {this.state.loading ? (
+          <div className="loading-scrim">
+            <img src="images/tail-spin.svg"/>
+          </div>
+        ) : ''} 
 
         <div ref="headerBar" className="header-bar">
           <div className="container layout horizontal">
@@ -92,6 +61,8 @@ var App = React.createClass({
             showPlaylist={playlist}
             loop={true}
             poster={{src:'/images/primarybg.png'}}
+            onPlaying={this.videoPlaying}
+            onCanPlay={this.videoCanPlay}
           />
         </div>
 
@@ -182,6 +153,56 @@ var App = React.createClass({
         </div>
       </div>
     ); 
+  },
+
+  videoCanPlay(index) {
+    
+    this.setState({loading: false})
+
+    var page = this.refs.page.getDOMNode();
+    if (page.classList.contains("LOADING")){
+      page.classList.remove("LOADING");
+
+      var branding = this.refs.branding.getDOMNode();
+      var downarrow = document.querySelector('.downarrow');
+      var pausebutton = document.querySelector('.pause');
+      var bigSearch = this.refs.bigSearch.getDOMNode();
+
+      branding.classList.remove('unresolved');
+      downarrow.classList.remove('unresolved');
+      bigSearch.classList.remove('unresolved');
+
+      branding.classList.add('resolving');    
+      bigSearch.classList.add('resolving');    
+
+      pausebutton.addEventListener('click', () => {
+        var dv = this.refs.dv;
+        if (dv.state.playing)
+          dv.pause();
+        else
+          dv.play();
+      })
+
+      downarrow.addEventListener('click', () => {
+        var page = document.querySelector('.page');
+        scrollTo(window.innerHeight, () => {
+
+        }, 700);
+      })
+
+      setTimeout(()=>{
+        branding.classList.remove('resolving');
+        bigSearch.classList.remove('resolving');    
+      }, 1600)
+
+      window.addEventListener('keyup', (e) => {
+        var dv = this.refs.dv;
+        var k = e.keyCode;
+        if (k === 37) return dv.play(dv.state.currentItem - 1);
+        if (k === 38) return dv[dv.state.playing ? 'pause' : 'play']();
+        if (k === 39) return dv.play(dv.state.currentItem + 1);
+      })
+    }
   },
 
   vscrolling(e) {
