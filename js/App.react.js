@@ -121,22 +121,22 @@ var App = React.createClass({
                 <div className="row">
                   <CouponCard 
                     image="http://d261sv3xac0f7i.cloudfront.net/custom/visa/peets/img/bg_v2.jpg"
-                    logo="/images/peetslogo.png"
+                    logo="images/peetslogo.png"
                     merchant="Peet's Coffee & Tea"
                     title="$5.00 Amazon Gift Card"
                     description="Just spend at least $2.00 with your registered VISA credit card at Peet's Coffee & Tea."
                   />
 
                   <CouponCard 
-                    image="/images/coffeepour.png"
-                    logo="/images/starbuckslogo.png"
+                    image="images/coffeepour.png"
+                    logo="images/starbuckslogo.png"
                     merchant="Starbucks Coffee"
                     title="10% off Your First Order"
                     description="Get a 10% discount on your first order. Limited time offer, restrictions apply. Orders over $75, ship free."
                   />
 
                   <CouponCard 
-                    image="/images/donuts.png"
+                    image="images/donuts.png"
                     logo="http://cdn.savings.com/logo/766094.pn"
                     merchant="Dunkin' Donuts"
                     title="Free Breakfast Sandwich"
@@ -145,22 +145,22 @@ var App = React.createClass({
 
                   <CouponCard 
                     image="http://d261sv3xac0f7i.cloudfront.net/custom/visa/peets/img/bg_v2.jpg"
-                    logo="/images/peetslogo.png"
+                    logo="images/peetslogo.png"
                     merchant="Peet's Coffee & Tea"
                     title="$5.00 Amazon Gift Card"
                     description="Just spend at least $2.00 with your registered VISA credit card at Peet's Coffee & Tea."
                   />
 
                   <CouponCard 
-                    image="/images/coffeepour.png"
-                    logo="/images/starbuckslogo.png"
+                    image="images/coffeepour.png"
+                    logo="images/starbuckslogo.png"
                     merchant="Starbucks Coffee"
                     title="10% off Your First Order"
                     description="Get a 10% discount on your first order. Limited time offer, restrictions apply. Orders over $75, ship free."
                   />
 
                   <CouponCard 
-                    image="/images/donuts.png"
+                    image="images/donuts.png"
                     logo="http://cdn.savings.com/logo/766094.pn"
                     merchant="Dunkin' Donuts"
                     title="Free Breakfast Sandwich"
