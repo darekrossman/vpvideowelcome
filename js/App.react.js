@@ -61,18 +61,18 @@ var App = React.createClass({
   render: function() {
  
     var playlist = [
-      '/video/MVI_0481.mp4',
-      '/video/statefair.mp4',
+      'video/MVI_0481.mp4',
+      'video/statefair.mp4',
       'http://s3.amazonaws.com/vpdms-media-us/user-media/stock-footage-two-brothers-hug-and-smile-while-on-a-suburban-sidewalk.mp4',
       'http://s3.amazonaws.com/vpdms-media-us/user-media/stock-footage-young-boy-in-front-of-lemonade-stand.mp4',
       'http://s3.amazonaws.com/vpdms-media-us/user-media/stock-footage-mother-giving-daughter-piggyback-as-they-spin-around-in-the-garden-in-slow-motion.mp4',
       'http://s3.amazonaws.com/vpdms-media-us/user-media/stock-footage-customers-browsing-and-shopping-in-local-gift-store-purchasing-products-and-goods-from-shop.mp4',
-      '/video/4664993.mp4',
-      '/video/5528147.mp4',
-      '/video/2708816.mp4',
-      '/video/4770209.mp4',
-      '/video/3519014.mp4',
-      '/video/5798342.mp4',
+      'video/4664993.mp4',
+      'video/5528147.mp4',
+      'video/2708816.mp4',
+      'video/4770209.mp4',
+      'video/3519014.mp4',
+      'video/5798342.mp4',
       
     ]
 
@@ -81,8 +81,8 @@ var App = React.createClass({
 
         <div ref="headerBar" className="header-bar">
           <div className="container layout horizontal">
-            <div className="flex"><img className="logo-small" src="/images/vplogo-rev.png"/></div>
-            <img className="search-icon" src="/images/search-white.svg"/>
+            <div className="flex"><img className="logo-small" src="images/vplogo-rev.png"/></div>
+            <img className="search-icon" src="images/search-white.svg"/>
           </div>
         </div>
 
@@ -96,7 +96,7 @@ var App = React.createClass({
         </div>
 
         <div className="branding unresolved" ref="branding">
-          <img ref="vplogo" className="logo" src="/images/vplogo-rev.png"/>
+          <img ref="vplogo" className="logo" src="images/vplogo-rev.png"/>
           <h1>Open the Neighborhood!</h1>
         </div>
         
@@ -105,7 +105,7 @@ var App = React.createClass({
           <ActionIcons ref="actions"/>
 
           <div className="big-search unresolved" ref="bigSearch">
-            <img className="search-icon" src="/images/search-white.svg"/>
+            <img className="search-icon" src="images/search-white.svg"/>
             <input className="big-search__input" type="text" placeholder="Discover savings in your neighborhood..." onKeyPress={this.keypress}/>
           </div>
 
@@ -174,7 +174,7 @@ var App = React.createClass({
             </div> {/* .local-block */}
 
             <div className="promo-banner">
-              <img ref="promoBanner" src="https://s3.amazonaws.com/vpdms-media-us/user-media/C4_Bridal_ThemePageHeader.jpg"/>
+              <img ref="promoBanner" src="ttps://s3.amazonaws.com/vpdms-media-us/user-media/C4_Bridal_ThemePageHeader.jpg"/>
             </div>
 
           </div> {/* .main */}
